@@ -1,4 +1,4 @@
-<mvc:View xmlns:table="sap.ui.table"
+<mvc:View xmlns:core="sap.ui.core" xmlns:table="sap.ui.table"
     controllerName="persotest.controller.Main"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
@@ -24,6 +24,9 @@
 									</Toolbar>
 								</table:extension>
 								<table:Column headerSpan="3 1" filterProperty="Customer/ContactName" sortProperty="Customer/ContactName">
+									<table:customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "Customer/ContactName", "type": "string"}'/>
+									</table:customData>
 									<Label text="Contact name"/>
 									<table:multiLabels>
 										<Label text="Customer" textAlign="Center" width="100%"/>
@@ -34,6 +37,9 @@
 									</table:template>
 								</table:Column>
 								<table:Column headerSpan="2 1" filterProperty="Customer/ContactTitle" sortProperty="Customer/ContactTitle">
+									<table:customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "Customer/ContactTitle", "type": "string"}'/>
+									</table:customData>
 									<Label text="Contact title"/>
 									<table:multiLabels>
 										<Label text="Customer" textAlign="Center" width="100%"/>
@@ -44,6 +50,9 @@
 									</table:template>
 								</table:Column>
 								<table:Column headerSpan="1" filterProperty="Customer/Address" sortProperty="Customer/Address">
+									<table:customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "Customer/Address", "type": "string"}'/>
+									</table:customData>
 									<Label text="Address"/>
 									<table:multiLabels>
 										<Label text="Customer" textAlign="Center" width="100%"/>
@@ -54,6 +63,9 @@
 									</table:template>
 								</table:Column>
 								<table:Column filterProperty="OrderDate" sortProperty="OrderDate">
+									<table:customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "OrderDate", "type": "date"}'/>
+									</table:customData>
 									<Label text="Order date"/>
 									<table:template>
 										<Text text="{
@@ -64,6 +76,9 @@
 									</table:template>
 								</table:Column>
 								<table:Column filterProperty="ShippedDate" sortProperty="ShippedDate">
+									<table:customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "ShippedDate", "type": "date"}'/>
+									</table:customData>
 									<Label text="Shipped date"/>
 									<table:template>
 										<Text text="{
@@ -74,6 +89,9 @@
 									</table:template>
 								</table:Column>
 								<table:Column filterProperty="RequiredDate" sortProperty="RequiredDate">
+									<table:customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "RequiredDate", "type": "date"}'/>
+									</table:customData>
 									<Label text="Required date"/>
 									<table:template>
 										<Text text="{
@@ -84,6 +102,9 @@
 									</table:template>
 								</table:Column>
 								<table:Column filterProperty="Shipper/CompanyName" sortProperty="Shipper/CompanyName">
+									<table:customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "Shipper/CompanyName", "type": "string"}'/>
+									</table:customData>
 									<Label text="Shipper"/>
 									<table:template>
 										<Text text="{Shipper/CompanyName}"/>
