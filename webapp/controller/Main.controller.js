@@ -11,14 +11,6 @@ sap.ui.define([
 		return Controller.extend("persotest.controller.Main", {
 			onInit: function () {
 				var oTable = this.byId("bigFuckingTable");
-				var oTableRowsBinding = oTable.getBinding("rows");
-
-				oTableRowsBinding.attachDataRequested(function(){
-					oTable.setBusy(true);
-				});
-				oTableRowsBinding.attachDataReceived(function(){
-					oTable.setBusy(false);
-				});
 
 				this.oTPC = new TablePersoController({
 					table: oTable,
