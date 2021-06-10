@@ -1,0 +1,16 @@
+{
+    "env": {
+        "browser": true
+    },
+    "globals": {
+        "sap": "readonly",
+        "jQuery": "readonly"
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 3
+    },
+    "rules": {
+        "semi": [ 1, "always" ]
+    }
+}

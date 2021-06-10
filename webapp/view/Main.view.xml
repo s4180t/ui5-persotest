@@ -1,0 +1,102 @@
+<mvc:View xmlns:table="sap.ui.table"
+    controllerName="persotest.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<VBox renderType="Bare" height="100%">
+						<items>
+							<table:Table id="bigFuckingTable" selectionMode="None" visibleRowCountMode="Auto" showColumnVisibilityMenu="true"
+								rows="{
+									path: '/Orders',
+									parameters: {
+										expand: 'Customer,Shipper'
+									} 
+								}">
+								<table:extension>
+									<Toolbar>
+										<ToolbarSpacer />
+										<Button icon="sap-icon://action-settings" press="handleTablePersoPress"/>
+									</Toolbar>
+								</table:extension>
+								<table:Column headerSpan="3 1" filterProperty="Customer/ContactName" sortProperty="Customer/ContactName">
+									<Label text="Contact name"/>
+									<table:multiLabels>
+										<Label text="Customer" textAlign="Center" width="100%"/>
+										<Label text="Contact name"/>
+									</table:multiLabels>
+									<table:template>
+										<Text text="{Customer/ContactName}"/>
+									</table:template>
+								</table:Column>
+								<table:Column headerSpan="2 1" filterProperty="Customer/ContactTitle" sortProperty="Customer/ContactTitle">
+									<Label text="Contact title"/>
+									<table:multiLabels>
+										<Label text="Customer" textAlign="Center" width="100%"/>
+										<Label text="Contact title"/>
+									</table:multiLabels>
+									<table:template>
+										<Text text="{Customer/ContactTitle}"/>
+									</table:template>
+								</table:Column>
+								<table:Column headerSpan="1" filterProperty="Customer/Address" sortProperty="Customer/Address">
+									<Label text="Address"/>
+									<table:multiLabels>
+										<Label text="Customer" textAlign="Center" width="100%"/>
+										<Label text="Address"/>
+									</table:multiLabels>
+									<table:template>
+										<Text text="{Customer/Address}"/>
+									</table:template>
+								</table:Column>
+								<table:Column filterProperty="OrderDate" sortProperty="OrderDate">
+									<Label text="Order date"/>
+									<table:template>
+										<Text text="{
+											path: 'OrderDate', 
+											type: 'sap.ui.model.type.Date',
+											formatOptions: { style: 'medium', UTC: true } 
+										}"/>
+									</table:template>
+								</table:Column>
+								<table:Column filterProperty="ShippedDate" sortProperty="ShippedDate">
+									<Label text="Shipped date"/>
+									<table:template>
+										<Text text="{
+											path: 'ShippedDate', 
+											type: 'sap.ui.model.type.Date',
+											formatOptions: { style: 'medium', UTC: true } 
+										}"/>
+									</table:template>
+								</table:Column>
+								<table:Column filterProperty="RequiredDate" sortProperty="RequiredDate">
+									<Label text="Required date"/>
+									<table:template>
+										<Text text="{
+											path: 'RequiredDate', 
+											type: 'sap.ui.model.type.Date',
+											formatOptions: { style: 'medium', UTC: true } 
+										}"/>
+									</table:template>
+								</table:Column>
+								<table:Column filterProperty="Shipper/CompanyName" sortProperty="Shipper/CompanyName">
+									<Label text="Shipper"/>
+									<table:template>
+										<Text text="{Shipper/CompanyName}"/>
+									</table:template>
+								</table:Column>
+								<table:layoutData>
+									<FlexItemData growFactor="1"/>
+								</table:layoutData>
+							</table:Table>
+						</items>
+					</VBox>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
