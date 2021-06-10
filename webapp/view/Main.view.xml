@@ -24,7 +24,7 @@
 										<Button icon="sap-icon://action-settings" press="handleTablePersoPress"/>
 									</Toolbar>
 								</table:extension>
-								<table:Column headerSpan="3 1" filterProperty="Customer/ContactName" sortProperty="Customer/ContactName">
+								<table:Column headerSpan="3 1" filterProperty="Customer/ContactName" sortProperty="Customer/ContactName" showFilterMenuEntry="false" showSortMenuEntry="false">
 									<table:customData>
 										<core:CustomData key="p13nData" value='\{"columnKey": "Customer/ContactName", "type": "string"}'/>
 									</table:customData>
@@ -37,7 +37,7 @@
 										<Text text="{Customer/ContactName}"/>
 									</table:template>
 								</table:Column>
-								<table:Column headerSpan="2 1" filterProperty="Customer/ContactTitle" sortProperty="Customer/ContactTitle">
+								<table:Column headerSpan="2 1" filterProperty="Customer/ContactTitle" sortProperty="Customer/ContactTitle" showFilterMenuEntry="false" showSortMenuEntry="false">
 									<table:customData>
 										<core:CustomData key="p13nData" value='\{"columnKey": "Customer/ContactTitle", "type": "string"}'/>
 									</table:customData>
@@ -50,7 +50,7 @@
 										<Text text="{Customer/ContactTitle}"/>
 									</table:template>
 								</table:Column>
-								<table:Column headerSpan="1" filterProperty="Customer/Address" sortProperty="Customer/Address">
+								<table:Column headerSpan="1" filterProperty="Customer/Address" sortProperty="Customer/Address" showFilterMenuEntry="false" showSortMenuEntry="false">
 									<table:customData>
 										<core:CustomData key="p13nData" value='\{"columnKey": "Customer/Address", "type": "string"}'/>
 									</table:customData>
@@ -63,7 +63,7 @@
 										<Text text="{Customer/Address}"/>
 									</table:template>
 								</table:Column>
-								<table:Column filterProperty="OrderDate" sortProperty="OrderDate">
+								<table:Column filterProperty="OrderDate" sortProperty="OrderDate" showFilterMenuEntry="false" showSortMenuEntry="false">
 									<table:customData>
 										<core:CustomData key="p13nData" value='\{"columnKey": "OrderDate", "type": "date"}'/>
 									</table:customData>
@@ -76,7 +76,7 @@
 										}"/>
 									</table:template>
 								</table:Column>
-								<table:Column filterProperty="ShippedDate" sortProperty="ShippedDate">
+								<table:Column filterProperty="ShippedDate" sortProperty="ShippedDate" showFilterMenuEntry="false" showSortMenuEntry="false">
 									<table:customData>
 										<core:CustomData key="p13nData" value='\{"columnKey": "ShippedDate", "type": "date"}'/>
 									</table:customData>
@@ -89,7 +89,7 @@
 										}"/>
 									</table:template>
 								</table:Column>
-								<table:Column filterProperty="RequiredDate" sortProperty="RequiredDate">
+								<table:Column filterProperty="RequiredDate" sortProperty="RequiredDate" showFilterMenuEntry="false" showSortMenuEntry="false">
 									<table:customData>
 										<core:CustomData key="p13nData" value='\{"columnKey": "RequiredDate", "type": "date"}'/>
 									</table:customData>
@@ -102,7 +102,7 @@
 										}"/>
 									</table:template>
 								</table:Column>
-								<table:Column filterProperty="Shipper/CompanyName" sortProperty="Shipper/CompanyName">
+								<table:Column filterProperty="Shipper/CompanyName" sortProperty="Shipper/CompanyName" showFilterMenuEntry="false" showSortMenuEntry="false">
 									<table:customData>
 										<core:CustomData key="p13nData" value='\{"columnKey": "Shipper/CompanyName", "type": "string"}'/>
 									</table:customData>
