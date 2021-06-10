@@ -1,9 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/comp/personalization/Controller",
-	'sap/ui/comp/personalization/Util',
-	'sap/ui/model/Sorter',
-	'sap/ui/model/Filter'
+	"sap/ui/comp/personalization/Util",
+	"sap/ui/model/Sorter",
+	"sap/ui/model/Filter"
 ],
 	function (Controller, TablePersoController, UtilPersonalization, Sorter, Filter) {
 		"use strict";

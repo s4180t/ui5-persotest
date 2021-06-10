@@ -1,6 +1,6 @@
 /*eslint-disable semi, no-console*/
 (function (sap) {
-    fioriToolsGetManifestLibs = function (manifestPath) {
+    var fioriToolsGetManifestLibs = function (manifestPath) {
         var url = manifestPath;
         var result = "";
         // SAPUI5 delivered namespaces from https://ui5.sap.com/#/api/sap
@@ -51,7 +51,7 @@
                     }
                     resolve(result);
                 })
-                .fail(function (error) {
+                .fail(function () {
                     reject(new Error("Could not fetch manifest at '" + manifestPath));
                 });
         });

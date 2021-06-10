@@ -4,13 +4,17 @@
     },
     "globals": {
         "sap": "readonly",
-        "jQuery": "readonly"
+        "jQuery": "readonly",
+        "$": "readonly",
+        "Promise": "readonly",
+        "URI": "readonly"
     },
     "extends": "eslint:recommended",
     "parserOptions": {
         "ecmaVersion": 3
     },
     "rules": {
-        "semi": [ 1, "always" ]
+        "semi": [ 1, "always" ],
+        "quotes": [2]
     }
 }
