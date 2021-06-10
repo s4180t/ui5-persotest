@@ -11,6 +11,7 @@
 					<VBox renderType="Bare" height="100%">
 						<items>
 							<table:Table id="bigFuckingTable" selectionMode="None" visibleRowCountMode="Auto" showColumnVisibilityMenu="true"
+								busyIndicatorDelay="0"
 								rows="{
 									path: '/Orders',
 									parameters: {

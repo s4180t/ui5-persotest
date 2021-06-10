@@ -11,6 +11,15 @@ sap.ui.define([
 		return Controller.extend("persotest.controller.Main", {
 			onInit: function () {
 				var oTable = this.byId("bigFuckingTable");
+				var oTableRowsBinding = oTable.getBinding("rows");
+
+				oTableRowsBinding.attachDataRequested(function(){
+					oTable.setBusy(true);
+				});
+				oTableRowsBinding.attachDataReceived(function(){
+					oTable.setBusy(false);
+				});
+
 				this.oTPC = new TablePersoController({
 					table: oTable,
 					setting: {
@@ -22,18 +31,18 @@ sap.ui.define([
 				});
 			},
 
-			handleTablePersoPress: function(/* oEvent */){
+			handleTablePersoPress: function(){
 				this.oTPC.openDialog();
-			}, 
+			},
 
 			onAfterP13nModelDataChange: function (oEvent) {
 				var oPersistentData = oEvent.getParameter("persistentData");
 				var oTable = oEvent.getSource().getTable();
-
 				var aColumns = oTable.getColumns();
 				var aFilters = [];
 				var aSorters = [];
-				var oBinding = oTable.getBinding("rows");
+				var oTableRowsBinding = oTable.getBinding("rows");
+
 				if (oPersistentData.filter && oPersistentData.filter.filterItems) {
 					oPersistentData.filter.filterItems.forEach(function (oModelItem) {
 						var oColumn = this.getColumn(oModelItem.columnKey, aColumns);
@@ -41,7 +50,7 @@ sap.ui.define([
 						aFilters.push(new Filter(sPath, oModelItem.operation, oModelItem.value1, oModelItem.value2));
 					}, this);
 				}
-				oBinding.filter(aFilters);
+				oTableRowsBinding.filter(aFilters);
 
 				if (oPersistentData.sort && oPersistentData.sort.sortItems) {
 					oPersistentData.sort.sortItems.forEach(function(oMSortItem) {
@@ -55,9 +64,9 @@ sap.ui.define([
 						}
 					});
 				}
-				oBinding.sort(aSorters);
+				oTableRowsBinding.sort(aSorters);
 			},
-			
+
 			getColumn: function(sColumnKey, aColumns) {
 				var oResultColumn = null;
 				aColumns.some(function(oColumn) {
@@ -70,5 +79,5 @@ sap.ui.define([
 			}
 
 		});
-		
+
 	});
