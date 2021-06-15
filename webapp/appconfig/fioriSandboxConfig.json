@@ -1,0 +1,56 @@
+{
+    "services": {
+        "LaunchPage": {
+            "adapter": {
+                "config": {
+                    "groups": [{
+                        "id": "sample_group",
+                        "title": "Sample Applications",
+                        "isPreset": true,
+                        "isVisible": true,
+                        "isGroupLocked": false,
+                        "tiles": [{
+                            "id": "todefaultapp",
+                            "title": "Default Application",
+                            "size": "1x1",
+                            "tileType": "sap.ushell.ui.tile.StaticTile",
+                            "properties": {
+                                "chipId": "catalogTile_00",
+                                "title": "Test app",
+                                "icon": "sap-icon://Fiori2/F0001",
+                                "targetURL": "#Test-app"
+                            }
+                        }]
+                    }]
+                }
+            }
+        },
+        "NavTargetResolution": {
+            "config": {
+                "enableClientSideTargetResolution": true
+            }
+        },
+        "ClientSideTargetResolution": {
+            "adapter": {
+                "config": {
+                    "inbounds": {
+                        "actionTodefaultapp": {
+                            "semanticObject": "Test",
+                            "action": "app",
+                            "title": "Test app",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "SAPUI5",
+                                "additionalInformation": "SAPUI5.Component=persotest",
+                                "url": "/"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

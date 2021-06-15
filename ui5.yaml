@@ -10,8 +10,6 @@ server:
       configuration:
         ignoreCertError: false
         backend:
-          - path: /sap
-            url: https://services.odata.org
           - path: /V2/Northwind/Northwind.svc/
             url: https://services.odata.org
     - name: fiori-tools-appreload

@@ -1,12 +1,12 @@
-<mvc:View 
-	xmlns:core="sap.ui.core" 
+<mvc:View xmlns:smartvariants="sap.ui.comp.smartvariants"
+	xmlns:core="sap.ui.core"
 	xmlns:table="sap.ui.table"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m" 
+    xmlns="sap.m"
     controllerName="persotest.controller.Main"
     displayBlock="true"
 	height="100%">
-	<Page title="{i18n>title}">
+	<Page title="{i18n>title}" id="page">
 		<VBox renderType="Bare" height="100%">
 			<table:Table id="bigFuckingTable" selectionMode="None" visibleRowCountMode="Auto" showColumnVisibilityMenu="true"
 				busyIndicatorDelay="0"
@@ -14,10 +14,11 @@
 					path: '/Orders',
 					parameters: {
 						expand: 'Customer,Shipper'
-					} 
+					}
 				}">
 				<table:extension>
 					<Toolbar>
+						<smartvariants:SmartVariantManagement id="bigFuckingTable-SmartVariant" persistencyKey="PKeyTest"/>
 						<ToolbarSpacer />
 						<Button icon="sap-icon://action-settings" press="handleTablePersoPress"/>
 					</Toolbar>
@@ -68,9 +69,9 @@
 					<Label text="Order date"/>
 					<table:template>
 						<Text text="{
-							path: 'OrderDate', 
+							path: 'OrderDate',
 							type: 'sap.ui.model.type.Date',
-							formatOptions: { style: 'medium', UTC: true } 
+							formatOptions: { style: 'medium', UTC: true }
 						}"/>
 					</table:template>
 				</table:Column>
@@ -81,9 +82,9 @@
 					<Label text="Shipped date"/>
 					<table:template>
 						<Text text="{
-							path: 'ShippedDate', 
+							path: 'ShippedDate',
 							type: 'sap.ui.model.type.Date',
-							formatOptions: { style: 'medium', UTC: true } 
+							formatOptions: { style: 'medium', UTC: true }
 						}"/>
 					</table:template>
 				</table:Column>
@@ -94,9 +95,9 @@
 					<Label text="Required date"/>
 					<table:template>
 						<Text text="{
-							path: 'RequiredDate', 
+							path: 'RequiredDate',
 							type: 'sap.ui.model.type.Date',
-							formatOptions: { style: 'medium', UTC: true } 
+							formatOptions: { style: 'medium', UTC: true }
 						}"/>
 					</table:template>
 				</table:Column>
